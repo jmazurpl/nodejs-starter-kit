@@ -21,6 +21,7 @@ src
     models              # Classes and definitions for all buisness objects.
     middlewares         # Middlewares used by the application for various tasks
     controllers         # Put all your API controllers here.
+    config              # Configuration files
 ```
 
 ## Getting Started
