@@ -1,18 +1,18 @@
 import { DataSource } from "typeorm"
-import config from "./config";
+import dbConfig from "./../config/db.config";
 
 const appDataSource = new DataSource({
-    type: config.db.type,
-    host: config.db.host,
-    port: config.db.port,
-    username: config.db.username,
-    password: config.db.password,
-    database: config.db.database,
+    type: dbConfig.type,
+    host: dbConfig.host,
+    port: dbConfig.port,
+    username: dbConfig.username,
+    password: dbConfig.password,
+    database: dbConfig.database,
     entities: ["src/entities/**/*.ts"],
     migrations: ["src/migrations/**/*.ts"],
     subscribers: ["src/subscribers/**/*.ts"],
-    logging: config.db.logging,
-    synchronize: config.db.synchronize,
+    logging: dbConfig.logging,
+    synchronize: dbConfig.synchronize,
 });
 
 export default appDataSource;

@@ -6,7 +6,8 @@ import helmet from "helmet";
 import swaggerUi from "swagger-ui-express";
 import compression from "compression";
 
-import config from "./utils/config";
+import swaggerConfig from "./config/swagger.config";
+import appConfig from "./config/app.config";
 import logger from "./utils/logger";
 import appDataSource from "./utils/add-data-source";
 
@@ -32,9 +33,9 @@ appDataSource
         RegisterRoutes(app);
 
         //Swagger
-        if (config.swagger.enabled) {
+        if (swaggerConfig.enabled) {
             app.use(
-                config.swagger.route,
+                swaggerConfig.route,
                 swaggerUi.serve,
                 swaggerUi.setup(swaggerDoc)
             );
@@ -43,11 +44,11 @@ appDataSource
         //Custom error handling middleware
         app.use(errorHandler);
 
-        app.listen(config.app.port, config.app.host, () => {
+        app.listen(appConfig.port, appConfig.host, () => {
             console.log("")
             console.log("-------------------------------------------------------");
-            console.log(`--> Application is ready on http://${config.app.host}:${config.app.port}`);
-            if (config.swagger.enabled) console.log(`--> Swagger is enabled on http://${config.app.host}:${config.app.port}${config.swagger.route}`);
+            console.log(`--> Application is ready on http://${appConfig.host}:${appConfig.port}`);
+            if (swaggerConfig.enabled) console.log(`--> Swagger is enabled on http://${appConfig.host}:${appConfig.port}${swaggerConfig.route}`);
             console.log("--> To shut it down, press <CTRL> + C at any time.");
             console.log("-------------------------------------------------------");
             console.log("")
