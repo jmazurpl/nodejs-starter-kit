@@ -49,13 +49,13 @@ Getting up and running is as easy as 1, 2, 3.
 
 Database updates are maintaned by TypeORM migrations. Below you can find some snippets to work with migrations:
 
-    ```
-    yarn run migration:generate src/migrations/migration-name   # Adding new migration
-    yarn run migration:show                                     # Displays pending migrations
-    yarn run migration:run                                      # Runs pending migrations
-    yarn run migration:revert                                   # Reverts last migration
-    yarn run migration:create                                   # Creates empty migration
-    ```
+```
+yarn run migration:generate src/migrations/migration-name   # Adding new migration
+yarn run migration:show                                     # Displays pending migrations
+yarn run migration:run                                      # Runs pending migrations
+yarn run migration:revert                                   # Reverts last migration
+yarn run migration:create                                   # Creates empty migration
+```
 ## Roadmap
 
 - [ ] Authorization with JWT and refresh tokens
