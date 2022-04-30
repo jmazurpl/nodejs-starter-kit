@@ -1,5 +1,5 @@
 import { DataSource } from "typeorm"
-import dbConfig from "./../config/db.config";
+import dbConfig from "../config/db.config";
 
 const appDataSource = new DataSource({
     type: dbConfig.type,
@@ -12,7 +12,7 @@ const appDataSource = new DataSource({
     migrations: ["src/migrations/**/*.ts"],
     subscribers: ["src/subscribers/**/*.ts"],
     logging: dbConfig.logging,
-    synchronize: dbConfig.synchronize,
+    synchronize: dbConfig.synchronize
 });
 
 export default appDataSource;

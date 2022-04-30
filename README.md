@@ -34,11 +34,27 @@ Getting up and running is as easy as 1, 2, 3.
     ```
     yarn
     ```
-
-3. Start your app
+3. Generate RSA Key Pair for JWT token signing
+   
+    ```
+    openssl genrsa -des3 -out private.pem 2048
+    openssl rsa -in private.pem -outform PEM -pubout -out public.pem
+    ```
+4. Start your app
 
     ```
     yarn dev
+    ```
+## Database and migrations
+
+Database updates are maintaned by TypeORM migrations. Below you can find some snippets to work with migrations:
+
+    ```
+    yarn run migration:generate src/migrations/migration-name   # Adding new migration
+    yarn run migration:show                                     # Displays pending migrations
+    yarn run migration:run                                      # Runs pending migrations
+    yarn run migration:revert                                   # Reverts last migration
+    yarn run migration:create                                   # Creates empty migration
     ```
 ## Roadmap
 

@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { LoggerOptions } from "typeorm/logger/LoggerOptions";
 
 const config = {

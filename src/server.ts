@@ -9,7 +9,7 @@ import compression from "compression";
 import swaggerConfig from "./config/swagger.config";
 import appConfig from "./config/app.config";
 import logger from "./utils/logger";
-import appDataSource from "./utils/add-data-source";
+import appDataSource from "./utils/data-source";
 
 import errorHandler from "./middlewares/error.middleware";
 import logRequest from "./middlewares/request.middleware";
